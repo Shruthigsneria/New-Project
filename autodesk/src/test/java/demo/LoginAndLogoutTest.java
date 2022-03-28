@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -16,13 +17,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class LoginAndLogoutTest {
 	@Test
 	public void loginlogoutscript() {
-
-		WebDriverManager.chromedriver().setup();
-
+		
 		WebDriver driver = null;
 
+	
 		String browser = System.getProperty("browser");
-
+		
 		if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
@@ -35,6 +35,7 @@ public class LoginAndLogoutTest {
 		} else {
 			driver = new ChromeDriver();
 		}
+
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
