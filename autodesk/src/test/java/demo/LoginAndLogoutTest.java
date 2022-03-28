@@ -17,11 +17,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class LoginAndLogoutTest {
 	@Test
 	public void loginlogoutscript() {
-
+		
 		WebDriver driver = null;
 
 		String browser = System.getProperty("browser");
-
+		
 		if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
